@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5072e0bc-e291-4cef-8a42-a9a013a3ffa7" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2glHMn179rlqgmpPJEMinfK5LB2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConfigReader.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PracticeFormPage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WebElementActions.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.AlertTest.alertTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AlertTest.alertTestAccept.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AlertTest.alertTestDismiss.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AlertTest.isAlertPresentClick.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.AlertTest.promptAlertTextInput.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.BasicLocators.openBrowser.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.BrowserHelperTest.test123.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.BrowserHelperTest.test7.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ButtonsTest.doubleClickTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ButtonsTest.rightClickTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckBoxHM2405 (1).executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckBoxHM2405.checkBoxTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckBoxHM2405.checkBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckBoxHM2405.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Demoqa.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Demoqa.textBoxTestClick.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DynamicPropertiesTest.checkEnableAfterClickTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.FrameTest.switchToAnotherFrame.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.KoverSamalet.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.KoverSamalet.listOfRestaurants.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.KoverSamalet.onlineFoodOrderWeb.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.KoverSamalet.printMenu.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.KoverSamalet.restaurantPishpekAppetizersMenu.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.KoverSamalet.restaurantPishpekBreakfastMenu.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MenuTest.moveToElementTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NBWalletTest.nBWalletRegistrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NambaDemeo.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NambaFood.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NambaFoodOrder.nambaFoodOrderTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NambaFoodOrder.openBrowser.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Obrasec.userRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Order.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.OrderKoversamalet.orderKFC.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PracticeFormTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PracticeFormTest.practiceFormTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.PracticeFormTest.practiceFormTestDate.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProgressBarTest.progressBarTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProgressBarTest.testProgressBarAt52Percent.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProgressBarTest.testProgressBarAt52Percent1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ProgressBarTest.testProgressBarAt55Percent.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SelectDemoTest.oldSelectMenuTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SelectMenuTest.testGetAllDivSelectOptions.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SelectMenuTest.testGetAllSelectOptions.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SelectMenuTest.testGetSelectOneOptions.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TB.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TB.textBoxTest.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.Test3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Test3.textBoxTest2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Test4.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Test5.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestBoxDem.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Testpage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Testpage.textBoxTest2.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Testpage.textBoxTest3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TexBox.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TexBox.textBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TexBox.textBoxTest1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBox.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBox3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxAssert.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxAssert.textBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxHM2405.checkBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxHM2405.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxTest.practiceFormTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TextBoxTest.textBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WebTableTest.deleteEmployeeByEmail.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WebTableTest.editValuesTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WebTableTest.editValuesTest1.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WebTableTest.test123.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WebTableTest.test123assert.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.А.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.А.findFood.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/zhyldyzadylchaeva/Documents/IntelliJ IDEA/DemoQAWinter24/src/main/java/com/winter24/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/test/resources/test_suites" />
+      <recent name="$PROJECT_DIR$/src/main/resources/drivers" />
+      <recent name="$USER_HOME$/Downloads" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.NBWalletTest.nBWalletRegistrationTest">
+    <configuration name="AlertTest.alertTestDismiss" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="DemoQAWinter24" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AlertTest" />
+      <option name="METHOD_NAME" value="alertTestDismiss" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlertTest.promptAlertTextInput" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="DemoQAWinter24" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AlertTest" />
+      <option name="METHOD_NAME" value="promptAlertTextInput" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NBWalletTest.nBWalletRegistrationTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="DemoQAWinter24" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NBWalletTest" />
+      <option name="METHOD_NAME" value="nBWalletRegistrationTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PracticeFormTest.practiceFormTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="DemoQAWinter24" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PracticeFormTest" />
+      <option name="METHOD_NAME" value="practiceFormTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PracticeFormTest.practiceFormTestDate" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="DemoQAWinter24" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PracticeFormTest" />
+      <option name="METHOD_NAME" value="practiceFormTestDate" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.NBWalletTest.nBWalletRegistrationTest" />
+        <item itemvalue="TestNG.PracticeFormTest.practiceFormTest" />
+        <item itemvalue="TestNG.PracticeFormTest.practiceFormTestDate" />
+        <item itemvalue="TestNG.AlertTest.promptAlertTextInput" />
+        <item itemvalue="TestNG.AlertTest.alertTestDismiss" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-graalvm-jdk-17.0.10-3183f394aec4-cc37c8d9" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5072e0bc-e291-4cef-8a42-a9a013a3ffa7" name="Changes" comment="" />
+      <created>1716265198756</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716265198756</updated>
+    </task>
+    <servers />
+  </component>
+</project>

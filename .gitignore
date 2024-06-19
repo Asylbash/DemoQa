@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+>>>>>>> b076131 (gitignore)
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
