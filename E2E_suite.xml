@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="End2end Suite">
+    <listeners>
+        <listener class-name="com.demoqa.listener.ScreenshotListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="/Users/zhyldyzadylchaeva/Documents/IntelliJ IDEA/DemoQAWinter24">
+        <classes>
+            <class name="AlertTest"></class>
+        </classes>
+    </test>
+</suite>
