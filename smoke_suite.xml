@@ -6,7 +6,9 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="/Users/zhyldyzadylchaeva/Documents/IntelliJ IDEA/DemoQAWinter24">
         <classes>
-            <class name="NBWalletTest"></class>
+            <class name="TextBoxTest"></class>
+            <class name="WebTableTest"></class>
+            <class name="PracticeFormTest"></class>
         </classes>
     </test>
 </suite>
