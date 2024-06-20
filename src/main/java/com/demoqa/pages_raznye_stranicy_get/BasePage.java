@@ -4,7 +4,6 @@ import com.demoqa.drivers.DriverManager;
 import com.demoqa.helper_vspomogatelnye_custom_metody.*;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.Driver;
 
 public abstract class BasePage {
 

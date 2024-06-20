@@ -4,7 +4,6 @@ import com.demoqa.drivers.DriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,7 +14,6 @@ import java.util.Random;
 public class WebElementActions {
 
     public Actions actions = new Actions(DriverManager.getDriver());
-
 
     // Метод для добавления задержки
     private void waitFor(int milliseconds) {
@@ -30,7 +28,7 @@ public class WebElementActions {
         waitElementToBeClickable(element);
         scrollToElement(element);
         highlightElement(element);
-        waitFor(5000);
+        waitFor(1000);
         element.clear();
         return this;
     }
@@ -39,7 +37,7 @@ public class WebElementActions {
         waitElementToBeClickable(element);
         highlightElement(element);
         scrollToElement(element);
-        waitFor(5000); // Задержка в 5 секунд перед кликом
+        waitFor(1000); // Задержка в 5 секунд перед кликом
         element.click();
         return this;
     }
@@ -65,7 +63,7 @@ public class WebElementActions {
     public WebElementActions sendKeys(WebElement element, String txt) {
         waitElementToBeVisible(element);
         scrollToElement(element);
-        waitFor(5000); // Задержка в 5 секунд перед отправкой текста
+        waitFor(2000); // Задержка в 5 секунд перед отправкой текста
         element.sendKeys(txt);
         return this;
     }
@@ -82,7 +80,7 @@ public class WebElementActions {
     public WebElementActions sendKeysWithTab(WebElement element, String txt) {
         waitElementToBeVisible(element);
         scrollToElement(element);
-        waitFor(5000); // Задержка в 5 секунд перед отправкой текста
+        waitFor(1000); // Задержка в 5 секунд перед отправкой текста
         element.sendKeys(txt);
         element.sendKeys(Keys.TAB);
         return this;
@@ -91,7 +89,7 @@ public class WebElementActions {
     public WebElementActions sendKeysWithDownEnter(WebElement element, String txt) {
         waitElementToBeVisible(element);
         scrollToElement(element);
-        waitFor(5000); // Задержка в 5 секунд перед отправкой текста
+        waitFor(1000); // Задержка в 5 секунд перед отправкой текста
         element.sendKeys(txt);
         element.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
         return this;
@@ -172,7 +170,7 @@ public class WebElementActions {
     public WebElementActions editWebTable(WebElement element) {
         waitElementToBeClickable(element);
         scrollToElement(element);
-        waitFor(5000); // Задержка в 5 секунд перед кликом
+        waitFor(1000); // Задержка в 5 секунд перед кликом
         element.click();
         element.clear();
         element.sendKeys();

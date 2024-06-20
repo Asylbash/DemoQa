@@ -13,7 +13,6 @@ import static com.demoqa.utils.ConfigReader.getValue;
 public class ChromeWebDriver {
 
     public static WebDriver loadChromeDriver() {
-//        System.setProperty("webdriver.chrome.driver", "/Users/zhyldyzadylchaeva/Documents/IntelliJ IDEA/DemoQAWinter24/src/main/resources/drivers/chromedriver");
 
         WebDriverManager.chromedriver().setup();
 
