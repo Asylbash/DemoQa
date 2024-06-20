@@ -12,6 +12,9 @@ public class AlertTest extends BaseTest {
         Thread.sleep(3000);
         alertHelper.acceptAlert();
         Thread.sleep(3000);
+        webElementActions.click(demoqa.getAlertPage().textInputAlertBtn);
+        Thread.sleep(3000);
+        alertHelper.acceptPrompt("hi");
     }
 
     @Test
@@ -31,14 +34,5 @@ public class AlertTest extends BaseTest {
         alertHelper.isAlertPresent();
         Thread.sleep(3000);
     }
-
-    @Test
-    void promptAlertTextInput() throws InterruptedException {
-        browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
-        webElementActions.click(demoqa.getAlertPage().textInputAlertBtn);
-        Thread.sleep(3000);
-        alertHelper.acceptPrompt("hi");
-    }
-
 
 }

@@ -2,19 +2,14 @@ package com.demoqa.pages_raznye_stranicy_get;
 
 import com.demoqa.drivers.DriverManager;
 import com.demoqa.entities_polya_objects.PracticeFormEntity;
-import com.demoqa.helper_vspomogatelnye_custom_metody.WebElementActions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 public class PracticeFormPage extends BasePage {
 
@@ -114,7 +109,6 @@ public class PracticeFormPage extends BasePage {
     public List<String> getSelectStateOptions() {
         return dropdownHelper.getAllDivOptions(stateBtn, "//div[contains(@class,'menu')]//div[contains(@class,'option')]");
     }
-
 
     private WebElement selectGender(String gender) {
         switch (gender) {

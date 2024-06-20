@@ -1,20 +1,11 @@
 package com.demoqa.utils;
 
-import com.demoqa.drivers.DriverManager;
 import com.demoqa.entities_polya_objects.Employee;
 import com.demoqa.entities_polya_objects.NBWalletEntity;
 import com.demoqa.entities_polya_objects.PracticeFormEntity;
 import com.demoqa.entities_polya_objects.TextBoxEntity;
-import com.demoqa.pages_raznye_stranicy_get.NBWalletPage;
 import com.demoqa.pages_raznye_stranicy_get.PracticeFormPage;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;

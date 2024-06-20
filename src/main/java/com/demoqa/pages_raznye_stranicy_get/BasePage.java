@@ -15,10 +15,10 @@ public abstract class BasePage {
 
 
     public WebElementActions webElementActions = new WebElementActions();
+
     public BrowserHelper browserHelper = new BrowserHelper(DriverManager.getDriver());
     public DropdownHelper dropdownHelper = new DropdownHelper(DriverManager.getDriver());
     public AlertHelper alertHelper = new AlertHelper(DriverManager.getDriver());
-
     public IframeHelper iframeHelper = new IframeHelper(DriverManager.getDriver());
 
 }

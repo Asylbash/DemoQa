@@ -1,12 +1,11 @@
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import java.util.Scanner;
-
 public class BrowserHelperTest extends BaseTest {
 
     @Test
     void test123() throws InterruptedException {
+
         browserHelper.open("https://demoqa.com/browser-windows");
         driver.findElement(By.xpath("//span[text()='Alerts']")).click();
         Thread.sleep(2000);
@@ -20,6 +19,7 @@ public class BrowserHelperTest extends BaseTest {
 
     @Test
     void test7() throws InterruptedException {
+
         browserHelper.open("https://demoqa.com/browser-windows");
         Thread.sleep(2000);
         driver.findElement(By.id("tabButton")).click();
@@ -34,7 +34,5 @@ public class BrowserHelperTest extends BaseTest {
         Thread.sleep(5000);
 
     }
-
-
 
 }

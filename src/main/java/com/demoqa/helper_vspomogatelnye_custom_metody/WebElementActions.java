@@ -44,19 +44,28 @@ public class WebElementActions {
 
     public WebElementActions clickAfterFiveSeconds(WebElement element) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(6));
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("enableAfter"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("enableAfter")));
+        scrollToElement(element);
+        highlightElement(element);
+        element.click();
         return this;
     }
 
     public WebElementActions clickColorChange(WebElement element) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.attributeToBe(By.id("colorChange"), "class", "mt-4 text-danger btn btn-primary"));
+        scrollToElement(element);
+        highlightElement(element);
+        element.click();
         return this;
     }
 
     public WebElementActions visibleAfterFiveSeconds(WebElement element) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("visibleAfter")));
+        scrollToElement(element);
+        highlightElement(element);
+        element.click();
         return this;
     }
 

@@ -1,12 +1,11 @@
 package com.demoqa.pages_raznye_stranicy_get;
 
 import com.demoqa.entities_polya_objects.NBWalletEntity;
-import com.demoqa.entities_polya_objects.TextBoxEntity;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NBWalletPage extends BasePage{
+public class NBWalletPage extends BasePage {
     @FindBy(id = "password")
     public WebElement passwordInput;
 
@@ -41,6 +40,5 @@ public class NBWalletPage extends BasePage{
                 .click(registerBtn);
         return this;
     }
-
 
 }
