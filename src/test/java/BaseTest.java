@@ -47,9 +47,9 @@ public class BaseTest {
         nbWalletPage = new NBWalletPage();
     }
 
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() throws InterruptedException {
-//        Thread.sleep(3000);
-//        DriverManager.closeDriver();
-//    }
+    @AfterClass(alwaysRun = true)
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(3000);
+        DriverManager.closeDriver();
+    }
 }
