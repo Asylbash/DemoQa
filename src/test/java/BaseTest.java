@@ -12,11 +12,9 @@ public class BaseTest {
     protected RandomUtils randomUtils;
     protected WebElementActions webElementActions;
     protected AlertHelper alertHelper;
-
     protected BrowserHelper browserHelper;
     protected DropdownHelper dropdownHelper;
     protected IframeHelper iframeHelper;
-
     protected DemoQA demoqa;
     protected NBWalletPage nbWalletPage;
 
