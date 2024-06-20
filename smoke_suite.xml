@@ -8,6 +8,7 @@
         <classes>
             <class name="TextBoxTest"></class>
             <class name="WebTableTest"></class>
+            <class name="PracticeFormTest"></class>
         </classes>
     </test>
 </suite>
