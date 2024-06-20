@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
+target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
->>>>>>> b076131 (gitignore)
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -38,3 +35,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+.idea
