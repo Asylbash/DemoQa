@@ -1,7 +1,6 @@
 package com.demoqa.pages_raznye_stranicy_get;
 
 import com.demoqa.entities_polya_objects.NBWalletEntity;
-import com.demoqa.entities_polya_objects.TextBoxEntity;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,14 +1,7 @@
 package com.demoqa.pages_raznye_stranicy_get;
 
-import com.demoqa.drivers.DriverManager;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-
-import java.time.Duration;
+import org.openqa.selenium.support.FindBy;;
 
 public class ProgressBarPage extends BasePage{
     @FindBy(id = "startStopButton")
@@ -19,8 +12,6 @@ public class ProgressBarPage extends BasePage{
 
 @FindBy(xpath = "//div[@aria-valuenow]")
     public WebElement aria_valuenow;
-
-
 
     public void startProgressBar() {
 

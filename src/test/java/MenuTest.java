@@ -1,13 +1,18 @@
-import com.demoqa.pages_raznye_stranicy_get.BasePage;
+
+import com.demoqa.utils.ConfigReader;
 import org.testng.annotations.Test;
+
+import static com.demoqa.enums.Endpoints.MENU;
 
 public class MenuTest extends BaseTest {
 
     @Test(description = "Verify move to element methods is work")
     public void moveToElementTest() throws InterruptedException {
-        browserHelper.open("https://demoqa.com/menu");
+
+        browserHelper.open(ConfigReader.getValue("baseURL") + MENU.getEndpoint());
         webElementActions.moveToElement(demoqa.getMenuPage().mainItem2);
         Thread.sleep(5000);
+
     }
 
 }

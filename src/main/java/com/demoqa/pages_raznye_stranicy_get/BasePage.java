@@ -4,8 +4,6 @@ import com.demoqa.drivers.DriverManager;
 import com.demoqa.helper_vspomogatelnye_custom_metody.*;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.Driver;
-
 public abstract class BasePage {
 
     public BasePage() {
@@ -16,6 +14,7 @@ public abstract class BasePage {
 
 
     public WebElementActions webElementActions = new WebElementActions();
+
     public BrowserHelper browserHelper = new BrowserHelper(DriverManager.getDriver());
     public DropdownHelper dropdownHelper = new DropdownHelper(DriverManager.getDriver());
     public AlertHelper alertHelper = new AlertHelper(DriverManager.getDriver());

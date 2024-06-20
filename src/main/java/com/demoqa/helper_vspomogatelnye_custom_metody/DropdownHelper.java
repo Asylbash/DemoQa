@@ -1,6 +1,5 @@
 package com.demoqa.helper_vspomogatelnye_custom_metody;
 
-import com.demoqa.drivers.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

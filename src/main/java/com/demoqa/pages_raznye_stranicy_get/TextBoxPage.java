@@ -1,6 +1,5 @@
 package com.demoqa.pages_raznye_stranicy_get;
 
-import com.demoqa.entities_polya_objects.PracticeFormEntity;
 import com.demoqa.entities_polya_objects.TextBoxEntity;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
