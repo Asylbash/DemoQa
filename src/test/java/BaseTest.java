@@ -13,16 +13,11 @@ public class BaseTest {
     protected RandomUtils randomUtils;
     protected WebElementActions webElementActions;
     protected AlertHelper alertHelper;
+
     protected BrowserHelper browserHelper;
     protected DropdownHelper dropdownHelper;
     protected IframeHelper iframeHelper;
-//    protected PracticeFormPage practiceFormPage;
-//    protected AlertPage alertPage;
-//    protected ButtonsPage buttonsPage;
-//    protected TextBoxPage textBoxPage;
-//    protected MenuPage menuPage;
-//    protected ProgressBarPage progressBarPage;
-//    protected SelectMenuPage selectMenuPage;
+
     protected DemoQA demoqa;
     protected NBWalletPage nbWalletPage;
 
@@ -33,13 +28,6 @@ public class BaseTest {
         webElementActions = new WebElementActions();
         alertHelper = new AlertHelper(driver);
         browserHelper = new BrowserHelper(driver);
-//        buttonsPage = new ButtonsPage();
-//        menuPage = new MenuPage();
-//        progressBarPage = new ProgressBarPage();
-//        selectMenuPage = new SelectMenuPage();
-//        textBoxPage = new TextBoxPage();
-//        practiceFormPage = new PracticeFormPage();
-//        alertPage = new AlertPage();
         dropdownHelper = new DropdownHelper(driver);
         demoqa = new DemoQA();
         demoqa.setUp();

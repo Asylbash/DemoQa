@@ -18,6 +18,6 @@ public class AlertPage extends BasePage {
     public WebElement appearAfter5AlertBtn;
 
     @FindBy(id = "promtButton")
-    public WebElement textInputAlertBtn;
+    public WebElement promtBtn;
 
 }

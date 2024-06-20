@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -39,11 +38,8 @@ public class BasicLocators {
         String text = driver.findElement(By.xpath("//label[text()='Permanent Address']")).getText();
         System.out.println(text);
 
-
-
         driver.close();
         driver.quit();
-
 
     }
 }

@@ -18,6 +18,7 @@ public class NBWalletTest extends BaseTest {
     @Link("http://188.225.14.33:8080/register")
     @Test(groups = {"Smoke", "UI", "NBW-23"}, description = "verify if password is not empty")
     public void nBWalletRegistrationTest() {
+
         browserHelper.open(ConfigReader.getValue("baseURL2"));
         NBWalletEntity nbWalletEntity = randomUtils.createRandomNBWalletEntity();
         nbWalletPage.fillUpNBWalletForm(nbWalletEntity);
@@ -32,5 +33,6 @@ public class NBWalletTest extends BaseTest {
             assertEquals(nbWalletPage.alertMassage.getText(), "Passwords must have at least one uppercase ('A'-'Z').");
         }
     }
+
 }
 

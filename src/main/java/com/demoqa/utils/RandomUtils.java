@@ -1,20 +1,13 @@
 package com.demoqa.utils;
 
-import com.demoqa.drivers.DriverManager;
 import com.demoqa.entities_polya_objects.Employee;
 import com.demoqa.entities_polya_objects.NBWalletEntity;
 import com.demoqa.entities_polya_objects.PracticeFormEntity;
 import com.demoqa.entities_polya_objects.TextBoxEntity;
-import com.demoqa.pages_raznye_stranicy_get.NBWalletPage;
 import com.demoqa.pages_raznye_stranicy_get.PracticeFormPage;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.ArrayList;
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -22,6 +15,7 @@ import java.util.Random;
 public class RandomUtils {
     Faker faker = new Faker();
     Random random = new Random();
+    String filePath = new File("src/main/resources/pictures/Jenkins.png").getAbsolutePath();
 
     public TextBoxEntity generateRandomTextBoxEntity() {
         TextBoxEntity textBoxEntity = new TextBoxEntity();
@@ -42,7 +36,7 @@ public class RandomUtils {
 //        practiceFormEntity.setSubject("m");
         practiceFormEntity.setSubjects(Arrays.asList("M", "P", "C")); // Пример списка предметов
         practiceFormEntity.setHobby(randomHobby());
-        practiceFormEntity.setSelectPic("/Users/zhyldyzadylchaeva/Desktop/1.jpeg");
+        practiceFormEntity.setSelectPic(filePath);
         practiceFormEntity.setCurrentAddress(faker.address().fullAddress());
         practiceFormEntity.setState(randomState());
 //        practiceFormEntity.setState("Raj");
@@ -84,10 +78,11 @@ public class RandomUtils {
         nbWalletEntity.setLastName(faker.name().firstName());
         nbWalletEntity.setEmail(faker.internet().emailAddress());
         nbWalletEntity.setPhoneNumber(faker.number().numberBetween(500000000, 700000000));
-        nbWalletEntity.setSelectPic("/Users/zhyldyzadylchaeva/Desktop/1.jpeg");
+        nbWalletEntity.setSelectPic(filePath);
         nbWalletEntity.setPassword(faker.internet().password());
         return nbWalletEntity;
     }
+
 }
 
 
