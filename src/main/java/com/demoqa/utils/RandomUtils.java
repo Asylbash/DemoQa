@@ -6,6 +6,11 @@ import com.demoqa.entities_polya_objects.PracticeFormEntity;
 import com.demoqa.entities_polya_objects.TextBoxEntity;
 import com.demoqa.pages_raznye_stranicy_get.PracticeFormPage;
 import com.github.javafaker.Faker;
+<<<<<<< HEAD
+=======
+
+import java.io.File;
+>>>>>>> refs/remotes/origin/main
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -13,6 +18,7 @@ import java.util.Random;
 public class RandomUtils {
     Faker faker = new Faker();
     Random random = new Random();
+    String filePath = new File("src/main/resources/pictures/Jenkins.png").getAbsolutePath();
 
     public TextBoxEntity generateRandomTextBoxEntity() {
         TextBoxEntity textBoxEntity = new TextBoxEntity();
@@ -33,7 +39,7 @@ public class RandomUtils {
 //        practiceFormEntity.setSubject("m");
         practiceFormEntity.setSubjects(Arrays.asList("M", "P", "C")); // Пример списка предметов
         practiceFormEntity.setHobby(randomHobby());
-        practiceFormEntity.setSelectPic("/Users/zhyldyzadylchaeva/Desktop/1.jpeg");
+        practiceFormEntity.setSelectPic(filePath);
         practiceFormEntity.setCurrentAddress(faker.address().fullAddress());
         practiceFormEntity.setState(randomState());
 //        practiceFormEntity.setState("Raj");
@@ -75,10 +81,11 @@ public class RandomUtils {
         nbWalletEntity.setLastName(faker.name().firstName());
         nbWalletEntity.setEmail(faker.internet().emailAddress());
         nbWalletEntity.setPhoneNumber(faker.number().numberBetween(500000000, 700000000));
-        nbWalletEntity.setSelectPic("/Users/zhyldyzadylchaeva/Desktop/1.jpeg");
+        nbWalletEntity.setSelectPic(filePath);
         nbWalletEntity.setPassword(faker.internet().password());
         return nbWalletEntity;
     }
+
 }
 
 

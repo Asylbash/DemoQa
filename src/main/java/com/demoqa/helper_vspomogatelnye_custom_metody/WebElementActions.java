@@ -52,7 +52,7 @@ public class WebElementActions {
     }
 
     public WebElementActions clickColorChange(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(6));
         wait.until(ExpectedConditions.attributeToBe(By.id("colorChange"), "class", "mt-4 text-danger btn btn-primary"));
         scrollToElement(element);
         highlightElement(element);
@@ -80,7 +80,7 @@ public class WebElementActions {
     public WebElementActions sendKeysWithEnter(WebElement element, String txt) {
         waitElementToBeVisible(element);
         scrollToElement(element);
-       // waitFor(3000); // Задержка в 5 секунд перед отправкой текста
+        // waitFor(3000); // Задержка в 5 секунд перед отправкой текста
         element.sendKeys(txt);
         element.sendKeys(Keys.ENTER);
         return this;
@@ -89,7 +89,7 @@ public class WebElementActions {
     public WebElementActions sendKeysWithTab(WebElement element, String txt) {
         waitElementToBeVisible(element);
         scrollToElement(element);
-        waitFor(1000); // Задержка в 5 секунд перед отправкой текста
+        waitFor(2000); // Задержка в 5 секунд перед отправкой текста
         element.sendKeys(txt);
         element.sendKeys(Keys.TAB);
         return this;
@@ -98,7 +98,7 @@ public class WebElementActions {
     public WebElementActions sendKeysWithDownEnter(WebElement element, String txt) {
         waitElementToBeVisible(element);
         scrollToElement(element);
-        waitFor(1000); // Задержка в 5 секунд перед отправкой текста
+        waitFor(2000); // Задержка в 5 секунд перед отправкой текста
         element.sendKeys(txt);
         element.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
         return this;
@@ -171,7 +171,7 @@ public class WebElementActions {
         for (String text : texts) {
             element.sendKeys(text);
             element.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
-            waitFor(500); // Задержка в 0.5 секунды между вводом строк
+            waitFor(1000); // Задержка в 0.5 секунды между вводом строк
         }
         return this;
     }
@@ -185,24 +185,39 @@ public class WebElementActions {
         element.sendKeys();
         return this;
     }
-    // метод находит элемент по указанному xPath, кликая на него раскрывает всплывающий список
-    // по указанному xPath ложит весь всплывающий список в лист
-    // рандомно выбирает один из элементов
-    public String randomElementSelection(String xpathDropdownControl, String xpathDropdownItems){
+
+    /**
+     * Метод для случайного выбора элемента из выпадающего списка.
+     * <p>
+     * Этот метод выполняет следующие шаги:
+     * 1. Находит контроллер выпадающего списка по указанному XPath и кликает на него для раскрытия списка.
+     * 2. Находит все элементы выпадающего списка по указанному XPath и добавляет их в список.
+     * 3. Случайным образом выбирает один из элементов списка и возвращает его текст.
+     *
+     * @param xpathDropdownControl XPath контроллера выпадающего списка.
+     * @param xpathDropdownItems   XPath элементов выпадающего списка.
+     * @return Текст случайно выбранного элемента из выпадающего списка.
+     */
+    public String randomElementSelection(String xpathDropdownControl, String xpathDropdownItems) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
-        // Нахождение контроллера списка и открытие списка
+
+        // Нахождение контроллера выпадающего списка и открытие списка
         WebElement dropdownControl = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathDropdownControl)));
         dropdownControl.click();
-        // Явное ожидание появления элементов списка
+
+        // Ожидание появления всех элементов выпадающего списка
         List<WebElement> dropdownItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpathDropdownItems)));
-        // Создание списка для хранения текстов элементов
-        ArrayList<String> itemList = new ArrayList<>();
-        // Добавление всех текстов элементов в ArrayList
+
+        // Создание списка для хранения текстов элементов выпадающего списка
+        List<String> itemList = new ArrayList<>();
         for (WebElement item : dropdownItems) {
             itemList.add(item.getText());
         }
+
+        // Случайный выбор одного из элементов списка
         Random random = new Random();
         int index = random.nextInt(itemList.size());
+
         return itemList.get(index);
     }
 }

@@ -36,6 +36,4 @@ public class IframeHelper {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(nameOfID));
     }
-
-
 }

@@ -16,7 +16,7 @@ public class BaseTest {
     protected BrowserHelper browserHelper;
     protected IframeHelper iframeHelper;
     protected DropdownHelper dropdownHelper;
-    protected FluentWait fluentWait;
+    protected CustomFluentWait customFluentWait;
 
     protected DemoQA demoqa;
     protected NBWalletPage nbWalletPage;
@@ -31,10 +31,12 @@ public class BaseTest {
         browserHelper = new BrowserHelper(driver);
         dropdownHelper = new DropdownHelper(driver);
         iframeHelper = new IframeHelper(driver);
-        fluentWait = new FluentWait();
+        customFluentWait = new CustomFluentWait(driver);
         randomUtils = new RandomUtils();
         demoqa = new DemoQA();
         demoqa.setUp();
+        nbWalletPage = new NBWalletPage();
+
 
     }
 

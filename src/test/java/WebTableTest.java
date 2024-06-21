@@ -6,11 +6,11 @@ import java.util.List;
 
 import static com.demoqa.enums.Endpoints.WEBTABLE;
 import static org.testng.Assert.assertTrue;
-import static org.testng.AssertJUnit.assertEquals;
 
 public class WebTableTest extends BaseTest {
-    @Test(description = "")
-    public void test123() throws InterruptedException {
+    @Test(description = "verify is new employee is added")
+    public void addNewEmployeeTest() throws InterruptedException {
+
         browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
         demoqa.getWebTablePage().addNewEmployee(randomUtils.createMockEmployee());
         List<Employee> employees = demoqa.getWebTablePage().getEmployeesFormTable();
@@ -20,8 +20,9 @@ public class WebTableTest extends BaseTest {
 
     }
 
-    @Test(description = "")
-    public void test123assert() throws InterruptedException {
+    @Test(description = "verify is new employee in list")
+    public void findNewAddedEmployeeAssert() throws InterruptedException {
+
         browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
         Employee employee = randomUtils.createMockEmployee();
         demoqa.getWebTablePage().addNewEmployee(employee);
@@ -57,16 +58,17 @@ public class WebTableTest extends BaseTest {
      * - "department" - редактирует отдел.
      * 5. После замены значения, нажимает кнопку "Submit" для сохранения изменений.
      *
-     * @param email    Электронная почта сотрудника, чьи данные необходимо изменить.
-     * @param oldValue Поле, которое необходимо изменить (например, "firstName", "lastName", "age" и т.д.).
-     * @param newValue Новое значение для указанного поля.
+     * @paramemail    Электронная почта сотрудника, чьи данные необходимо изменить.
+     * @paramoldValue Поле, которое необходимо изменить (например, "firstName", "lastName", "age" и т.д.).
+     * @paramnewValue Новое значение для указанного поля.
      * @return Возвращает текущий объект WebTablePage для возможности цепочки вызовов.
      * @throws IllegalArgumentException Если указанный email не найден или указано недопустимое значение поля.
      */
 
     @Test(description = "edit exist employee dates using email and verify updates")
     public void editValuesTest() {
-        driver.get("https://demoqa.com/webtables");
+
+        browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
         demoqa.getWebTablePage().editEmployeeData("cierra@example.com", "age", "34");
         List<Employee> employees = demoqa.getWebTablePage().getEmployeesFormTable();
         for (Employee employee : employees) {
@@ -76,7 +78,7 @@ public class WebTableTest extends BaseTest {
 
     @Test(groups = {"Smoke", "UI", "DQA-33"}, description = "delete employee by email")
     public void deleteEmployeeByEmail() {
-        driver.get("https://demoqa.com/webtables");
+        browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
         demoqa.getWebTablePage().deleteEmployeeByEmail("cierra@example.com");
     }
 

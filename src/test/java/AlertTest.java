@@ -12,9 +12,11 @@ public class AlertTest extends BaseTest {
         Thread.sleep(3000);
         alertHelper.acceptAlert();
         Thread.sleep(3000);
-        webElementActions.click(demoqa.getAlertPage().textInputAlertBtn);
-        Thread.sleep(3000);
-        alertHelper.acceptPrompt("hi");
+
+        webElementActions.click(demoqa.getAlertPage().promtBtn);
+        // Ожидание алерта и ввод текста
+        alertHelper.acceptPromptZh("hi");
+
     }
 
     @Test

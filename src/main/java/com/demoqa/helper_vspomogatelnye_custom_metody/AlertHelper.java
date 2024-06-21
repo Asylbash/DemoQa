@@ -56,9 +56,8 @@ public class AlertHelper {
         dismissAlert();
     }
 
-    public void acceptPrompt(String txt) throws InterruptedException {
-        if (!isAlertPresent())
-            return;
+    public void acceptPrompt(String txt) {
+        if (!isAlertPresent()) return;
         Alert alert = getAlert();
         alert.sendKeys(txt);
         alert.accept();
