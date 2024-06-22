@@ -8,7 +8,7 @@ import static com.demoqa.enums.Endpoints.WEBTABLE;
 import static org.testng.Assert.assertTrue;
 
 public class WebTableTest extends BaseTest {
-    @Test(description = "verify is new employee is added")
+    @Test(groups = {"Smoke", "UI", "1311"}, description = "verify is new employee is added")
     public void addNewEmployeeTest() throws InterruptedException {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
@@ -20,7 +20,7 @@ public class WebTableTest extends BaseTest {
 
     }
 
-    @Test(description = "verify is new employee in list")
+    @Test(groups = {"Smoke", "UI", "1312"}, description = "verify is new employee in list")
     public void findNewAddedEmployeeAssert() throws InterruptedException {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
@@ -65,7 +65,7 @@ public class WebTableTest extends BaseTest {
      * @throws IllegalArgumentException Если указанный email не найден или указано недопустимое значение поля.
      */
 
-    @Test(description = "edit exist employee dates using email and verify updates")
+    @Test(groups = {"Smoke", "UI", "1313"}, description = "edit exist employee dates using email and verify updates")
     public void editValuesTest() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
@@ -76,7 +76,7 @@ public class WebTableTest extends BaseTest {
         }
     }
 
-    @Test(groups = {"Smoke", "UI", "DQA-33"}, description = "delete employee by email")
+    @Test(groups = {"Smoke", "UI", "1314"}, description = "delete employee by email")
     public void deleteEmployeeByEmail() {
        browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
         demoqa.getWebTablePage().deleteEmployeeByEmail("cierra@example.com");

@@ -6,7 +6,7 @@ import static com.demoqa.enums.Endpoints.MENU;
 
 public class MenuTest extends BaseTest {
 
-    @Test(description = "Verify move to element methods is work")
+    @Test(groups = {"Regression", "UI", "1110"}, description = "Verify move to element methods is work")
     public void moveToElementTest() throws InterruptedException {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + MENU.getEndpoint());

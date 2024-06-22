@@ -213,7 +213,7 @@
         </profile>
 
         <profile>
-            <id>E2E_Test</id>
+            <id>E2E</id>
             <build>
                 <plugins>
                     <plugin>

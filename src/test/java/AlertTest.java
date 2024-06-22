@@ -5,7 +5,7 @@ import static com.demoqa.enums.Endpoints.ALERT;
 
 public class AlertTest extends BaseTest {
 
-    @Test(groups = {"Smoke", "UI", "1011"}, description = "Alert test")
+    @Test(groups = {"E2E", "UI", "1011"}, description = "Alert test")
     void alertTestAccept() throws InterruptedException {
         browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
         webElementActions.click(demoqa.getAlertPage().confirmAlertBtn);
@@ -18,7 +18,7 @@ public class AlertTest extends BaseTest {
         alertHelper.acceptPromptZh("hi");
     }
 
-    @Test(groups = {"Smoke", "UI", "1010"}, description = "Alert test1")
+    @Test(groups = {"E2E", "UI", "1010"}, description = "Alert test1")
     void alertTestDismiss() throws InterruptedException {
         browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
         webElementActions.click(demoqa.getAlertPage().dismissAlertBtn);
@@ -27,7 +27,7 @@ public class AlertTest extends BaseTest {
         Thread.sleep(3000);
     }
 
-    @Test(groups = {"Smoke", "UI", "1012"}, description = "Alert test2")
+    @Test(groups = {"E2E", "UI", "1012"}, description = "Alert test2")
     void isAlertPresentClick() throws InterruptedException {
         browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
         webElementActions.click(demoqa.getAlertPage().seeAlertBtn);

@@ -8,7 +8,7 @@ import static com.demoqa.enums.Endpoints.BUTTONS;
 
 public class ButtonsTest extends BaseTest {
 
-    @Test(groups = {"Smoke", "UI", "123"}, description = "Verify double click button is working properly")
+    @Test(groups = {"Regression", "UI", "1210"}, description = "Verify double click button is working properly")
     @Description("verify is double click work correctly")
     @Owner("Zhyldyz")
     @Tag("Smoke")
@@ -24,7 +24,7 @@ public class ButtonsTest extends BaseTest {
 
     }
 
-    @Test(groups = {"Regression", "API", "124"}, description = "Verify right click button is working properly")
+    @Test(groups = {"Regression", "UI", "1211"}, description = "Verify right click button is working properly")
     public void rightClickTest() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + BUTTONS.getEndpoint());
@@ -33,7 +33,7 @@ public class ButtonsTest extends BaseTest {
 
     }
 
-    @Test(groups = {"E2E", "SQL", "125"}, description = "Verify clickMe button is working properly")
+    @Test(groups = {"Regression", "UI", "1212"}, description = "Verify clickMe button is working properly")
     public void clickMeTest() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + BUTTONS.getEndpoint());
