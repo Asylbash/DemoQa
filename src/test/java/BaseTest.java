@@ -4,8 +4,8 @@ import com.demoqa.pages_raznye_stranicy_get.DemoQA;
 import com.demoqa.pages_raznye_stranicy_get.NBWalletPage;
 import com.demoqa.utils.RandomUtils;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
@@ -22,7 +22,7 @@ public class BaseTest {
     protected NBWalletPage nbWalletPage;
     protected RandomUtils randomUtils;
 
-    @BeforeSuite(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
 
         driver = DriverManager.getDriver();
@@ -40,7 +40,7 @@ public class BaseTest {
 
     }
 
-    @AfterSuite(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDown() throws InterruptedException {
 
         Thread.sleep(3000);

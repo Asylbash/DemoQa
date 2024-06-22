@@ -1,5 +1,6 @@
 package com.demoqa.helper_vspomogatelnye_custom_metody;
 
+import com.demoqa.drivers.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -8,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Set;
 
 public class BrowserHelper {
-    private WebDriver driver;
+    private WebDriver driver = DriverManager.getDriver();
 
     public BrowserHelper(WebDriver driver) {
         this.driver = driver;

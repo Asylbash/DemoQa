@@ -78,7 +78,7 @@ public class WebTableTest extends BaseTest {
 
     @Test(groups = {"Smoke", "UI", "DQA-33"}, description = "delete employee by email")
     public void deleteEmployeeByEmail() {
-        browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
+       browserHelper.open(ConfigReader.getValue("baseURL") + WEBTABLE.getEndpoint());
         demoqa.getWebTablePage().deleteEmployeeByEmail("cierra@example.com");
     }
 

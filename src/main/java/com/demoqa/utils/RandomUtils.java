@@ -6,11 +6,8 @@ import com.demoqa.entities_polya_objects.PracticeFormEntity;
 import com.demoqa.entities_polya_objects.TextBoxEntity;
 import com.demoqa.pages_raznye_stranicy_get.PracticeFormPage;
 import com.github.javafaker.Faker;
-<<<<<<< HEAD
-=======
 
 import java.io.File;
->>>>>>> refs/remotes/origin/main
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;

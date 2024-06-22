@@ -125,7 +125,7 @@ public class WebTablePage extends BasePage {
         }
         return this;
     }
-@Step("delete from list employee by email {}")
+@Step("delete from list employee by email")
     // Метод для удаления сотрудника по email
     public WebTablePage deleteEmployeeByEmail(String email) {
         boolean emailExists = getEmployeesFormTable().stream().anyMatch(e -> e.getEmail().equals(email));
