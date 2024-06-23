@@ -1,9 +1,8 @@
 pipeline {
     agent any
 
-    environment {
-        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
-        MAVEN_HOME = '/usr/share/maven'
+    tools {
+        maven "MAVEN"
     }
 
     parameters {
@@ -23,7 +22,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git 'https://github.com/Gaukhar312/DemoQA2024.git' // замените на URL вашего репозитория
+                git 'https://github.com/Asylbash/DemoQa.git' // замените на URL вашего репозитория
             }
         }
 
@@ -41,7 +40,7 @@ pipeline {
                     def testSuite = params.TEST_SUITE ?: 'Smoke'
 
                     echo "Running tests for project: ${project}, test suite: ${testSuite}"
-                    sh "${MAVEN_HOME}/bin/mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
+                    sh "mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
                 }
             }
 
