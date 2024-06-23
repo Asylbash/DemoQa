@@ -29,7 +29,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh "${MAVEN_HOME}/bin/mvn clean package"
+                sh "mvn clean package"
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
                     def testSuite = params.TEST_SUITE ?: 'Smoke'
 
                     echo "Running tests for project: ${project}, test suite: ${testSuite}"
-                    sh "${MAVEN_HOME}/bin/mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
+                    sh "mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
                 }
             }
 
