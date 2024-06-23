@@ -23,7 +23,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git url: 'https://github.com/Asylbash/DemoQa.git' // замените на URL вашего репозитория
+                git 'https://github.com/Asylbash/DemoQa.git' // замените на URL вашего репозитория
             }
         }
 
@@ -57,18 +57,6 @@ pipeline {
                     ])
                 }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline succeeded!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-        always {
-            cleanWs()
         }
     }
 }
