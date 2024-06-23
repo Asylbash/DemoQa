@@ -1,8 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-        maven "MAVEN"
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
+        MAVEN_HOME = '/usr/share/maven'
     }
 
     parameters {
@@ -13,26 +14,34 @@ pipeline {
         )
         choice(
             name: 'TEST_SUITE',
-            choices: ['Smoke', 'Regression', 'E2E'],
+            choices: ['Smoke', 'Regression', 'E2E_Test'],
             description: 'Test Suite'
-        )
-        string(
-            name: "TEST_CASE_ID",
-            defaultValue: "",
-            description: 'Enter the ID of the test case, or TYPE: API, UI'
         )
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out the code...'
+                git 'https://github.com/Gaukhar312/DemoQA2024.git' // замените на URL вашего репозитория
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+                sh "${MAVEN_HOME}/bin/mvn clean package"
+            }
+        }
+
         stage('Test') {
             steps {
                 script {
                     def project = params.PROJECT ?: 'DemoQaWinter24'
-                    def testSuite = params.TEST_SUITE ?: 'UI'
-                    def testCaseId = params.TEST_CASE_ID ?: ''
+                    def testSuite = params.TEST_SUITE ?: 'Smoke'
 
-                    echo "Running tests for project: ${project}, test suite: ${testSuite}, test case ID: ${testCaseId}"
-                    sh "mvn clean test -P${testSuite} -DtestCaseId=${testCaseId} -DfailIfNoTests=false"
+                    echo "Running tests for project: ${project}, test suite: ${testSuite}"
+                    sh "${MAVEN_HOME}/bin/mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
                 }
             }
 
@@ -48,18 +57,6 @@ pipeline {
                     ])
                 }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline succeeded!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-        always {
-            cleanWs()
         }
     }
 }
