@@ -22,7 +22,10 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git 'https://github.com/Asylbash/DemoQa.git' // замените на URL вашего репозитория
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/main']], // Убедись, что имя ветки соответствует твоей
+                          userRemoteConfigs: [[url: 'https://github.com/Asylbash/DemoQa.git']]
+                ])
             }
         }
 
@@ -56,6 +59,18 @@ pipeline {
                     ])
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+        always {
+            cleanWs()
         }
     }
 }
