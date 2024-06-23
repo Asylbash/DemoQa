@@ -1,8 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-        maven "MAVEN"
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
+        MAVEN_HOME = '/usr/share/maven'
     }
 
     parameters {
@@ -22,7 +23,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git 'https://github.com/Asylbash/DemoQa.git' // замените на URL вашего репозитория
+                git url: 'https://github.com/Asylbash/DemoQa.git' // замените на URL вашего репозитория
             }
         }
 
@@ -56,6 +57,18 @@ pipeline {
                     ])
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+        always {
+            cleanWs()
         }
     }
 }
