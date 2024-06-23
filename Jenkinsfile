@@ -22,6 +22,8 @@ pipeline {
             description: 'Enter the ID of the test case, or TYPE: API, UI'
         )
     }
+
+    stages {
         stage('Test') {
             steps {
                 script {
