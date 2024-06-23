@@ -16,18 +16,16 @@ pipeline {
             choices: ['Smoke', 'Regression', 'E2E'],
             description: 'Test Suite'
         )
-        string(
-            name: "TEST_CASE_ID",
-            defaultValue: "",
-            description: 'Enter the ID of the test case, or TYPE: API, UI'
-        )
     }
 
     stages {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git 'https://github.com/Asylbash/DemoQa.git' // Замените на URL вашего репозитория
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/main']], // Убедись, что имя ветки соответствует твоей
+                          userRemoteConfigs: [[url: 'https://github.com/Asylbash/DemoQa.git']]
+                ])
             }
         }
 
@@ -42,11 +40,10 @@ pipeline {
             steps {
                 script {
                     def project = params.PROJECT ?: 'DemoQaWinter24'
-                    def testSuite = params.TEST_SUITE ?: 'UI'
-                    def testCaseId = params.TEST_CASE_ID ?: ''
+                    def testSuite = params.TEST_SUITE ?: 'Smoke'
 
-                    echo "Running tests for project: ${project}, test suite: ${testSuite}, test case ID: ${testCaseId}"
-                    sh "mvn clean test -P${testSuite} -DtestCaseId=${testCaseId} -DfailIfNoTests=false"
+                    echo "Running tests for project: ${project}, test suite: ${testSuite}"
+                    sh "mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
                 }
             }
 
