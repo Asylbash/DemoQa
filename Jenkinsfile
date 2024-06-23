@@ -22,22 +22,6 @@ pipeline {
             description: 'Enter the ID of the test case, or TYPE: API, UI'
         )
     }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out the code...'
-                git 'https://github.com/Asylbash/DemoQa.git' // Замените на URL вашего репозитория
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building the application...'
-                sh "mvn clean package"
-            }
-        }
-
         stage('Test') {
             steps {
                 script {
