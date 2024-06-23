@@ -14,7 +14,7 @@ pipeline {
         )
         choice(
             name: 'TEST_SUITE',
-            choices: ['Smoke', 'Regression', 'E2E_Test'],
+            choices: ['Smoke', 'Regression', 'E2E'],
             description: 'Test Suite'
         )
     }
