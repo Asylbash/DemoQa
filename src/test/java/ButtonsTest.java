@@ -12,9 +12,9 @@ public class ButtonsTest extends BaseTest {
     @Description("verify is double click work correctly")
     @Owner("Zhyldyz")
     @Tag("Smoke")
-    @Severity(SeverityLevel.CRITICAL)
-    @Story("NBW-1")
-    @Epic("Registration")
+    @Severity(SeverityLevel.MINOR)
+    @Story("1210")
+    @Epic("ButtonClick")
     @Link("www.demoqa.com")
     public void doubleClickTest() {
 
@@ -25,6 +25,12 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(groups = {"Regression", "UI", "1211"}, description = "Verify right click button is working properly")
+    @Owner("Zhyldyz")
+    @Tag("Smoke")
+    @Severity(SeverityLevel.MINOR)
+    @Story("1211")
+    @Epic("ButtonClick")
+    @Link("www.demoqa.com")
     public void rightClickTest() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + BUTTONS.getEndpoint());
@@ -34,6 +40,12 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(groups = {"Regression", "UI", "1212"}, description = "Verify clickMe button is working properly")
+    @Owner("Zhyldyz")
+    @Tag("Smoke")
+    @Severity(SeverityLevel.MINOR)
+    @Story("1212")
+    @Epic("ButtonClick")
+    @Link("www.demoqa.com")
     public void clickMeTest() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + BUTTONS.getEndpoint());

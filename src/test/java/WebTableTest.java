@@ -82,14 +82,14 @@ public class WebTableTest extends BaseTest {
         demoqa.getWebTablePage().deleteEmployeeByEmail("cierra@example.com");
     }
 
-//    @Test(description = "verify updates")
-//    public void editValuesTest1() {
-//        driver.get("https://demoqa.com/webtables");
-//        String[] newValues = {"John", "Doe", "30", "john.doe@example.com", "500000", "IT"};
-//        demoqa.getWebTablePage().editEmployee("cierra@example.com", newValues);
-//        List<Employee> employees = demoqa.getWebTablePage().getEmployeesFormTable();
-//        for (Employee employee : employees) {
-//            System.out.println(employee);
-//        }
-//    }
+    @Test(groups = {"Smoke", "UI", "1315"}, description = "edit exist employee dates using email and verify updates")
+    public void editValuesTest1() {
+        driver.get("https://demoqa.com/webtables");
+        String[] newValues = {"John", "Doe", "30", "john.doe@example.com", "500000", "IT"};
+        demoqa.getWebTablePage().editEmployee("cierra@example.com", newValues);
+        List<Employee> employees = demoqa.getWebTablePage().getEmployeesFormTable();
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+    }
 }

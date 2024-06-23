@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import static com.demoqa.enums.Endpoints.SELECT_MENU;
 
 public class SelectDemoTest extends BaseTest {
-    @Test
+    @Test(description = "verify is selected one option")
     void oldSelectMenuTest() throws InterruptedException {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + SELECT_MENU.getEndpoint());

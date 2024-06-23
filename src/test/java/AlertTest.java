@@ -1,4 +1,6 @@
 import com.demoqa.utils.ConfigReader;
+import io.qameta.allure.*;
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 
 import static com.demoqa.enums.Endpoints.ALERT;
@@ -6,6 +8,12 @@ import static com.demoqa.enums.Endpoints.ALERT;
 public class AlertTest extends BaseTest {
 
     @Test(groups = {"E2E", "UI", "1011"}, description = "Alert test")
+    @Owner("Zhyldyz")
+    @Tag("E2E")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("1011")
+    @Epic("Alerts")
+    @Link("www.demoqa.com")
     void alertTestAccept() throws InterruptedException {
         browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
         webElementActions.click(demoqa.getAlertPage().confirmAlertBtn);
@@ -19,6 +27,12 @@ public class AlertTest extends BaseTest {
     }
 
     @Test(groups = {"E2E", "UI", "1010"}, description = "Alert test1")
+    @Owner("Zhyldyz")
+    @Tag("E2E")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("1010")
+    @Epic("Alerts")
+    @Link("www.demoqa.com")
     void alertTestDismiss() throws InterruptedException {
         browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
         webElementActions.click(demoqa.getAlertPage().dismissAlertBtn);
@@ -28,6 +42,12 @@ public class AlertTest extends BaseTest {
     }
 
     @Test(groups = {"E2E", "UI", "1012"}, description = "Alert test2")
+    @Owner("Zhyldyz")
+    @Tag("E2E")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("1012")
+    @Epic("Alerts")
+    @Link("www.demoqa.com")
     void isAlertPresentClick() throws InterruptedException {
         browserHelper.open(ConfigReader.getValue("baseURL") + ALERT.getEndpoint());
         webElementActions.click(demoqa.getAlertPage().seeAlertBtn);

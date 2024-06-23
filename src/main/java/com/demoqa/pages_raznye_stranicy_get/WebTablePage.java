@@ -139,6 +139,7 @@ public class WebTablePage extends BasePage {
         return this;
     }
 
+    @Step("find employee using email, then edit edit value {0}, {1}")
     public WebTablePage editEmployee(String email, String[] newValue) {
         // Получаем список сотрудников из таблицы
         List<Employee> employees = getEmployeesFormTable();

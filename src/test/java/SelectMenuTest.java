@@ -7,7 +7,7 @@ import java.util.List;
 import static com.demoqa.enums.Endpoints.SELECT_MENU;
 
 public class SelectMenuTest extends BaseTest {
-    @Test
+    @Test(description = "verify is collected in list all options")
     public void testGetAllSelectOptions() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + SELECT_MENU.getEndpoint());
@@ -17,7 +17,7 @@ public class SelectMenuTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(description = "verify is collected in list all options")
     public void testGetAllDivSelectOptions() {
 
         browserHelper.open(ConfigReader.getValue("baseURL") + SELECT_MENU.getEndpoint());
