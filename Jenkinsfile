@@ -1,76 +1,40 @@
 pipeline {
     agent any
-
     tools {
         maven "MAVEN"
     }
-
     parameters {
         choice(
-            name: 'PROJECT',
-            choices: ['DemoQaWinter24'],
+            name: "PROJECT",
+            choices: ['Smoke', 'Regression', 'E2E'],
             description: 'Choose project'
         )
         choice(
-            name: 'TEST_SUITE',
-            choices: ['Smoke', 'Regression', 'E2E'],
-            description: 'Test Suite'
+            name: "TEST_TYPE",
+            choices: ['UI', 'API'],
+            description: 'Choose the type of tests to run'
         )
     }
-
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out the code...'
-                checkout([$class: 'GitSCM',
-                          branches: [[name: '*/main']], // Убедись, что имя ветки соответствует твоей
-                          userRemoteConfigs: [[url: 'https://github.com/Asylbash/DemoQa.git']]
-                ])
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building the application...'
-                sh "mvn clean package"
-            }
-        }
-
         stage('Test') {
             steps {
                 script {
-                    def project = params.PROJECT ?: 'DemoQaWinter24'
-                    def testSuite = params.TEST_SUITE ?: 'Smoke'
-
-                    echo "Running tests for project: ${project}, test suite: ${testSuite}"
-                    sh "mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
+                    def project = params.PROJECT ?: 'Smoke'
+                    def testType = params.TEST_TYPE ?: 'UI'
+                    sh "mvn clean test -P $project -Dgroups=$testType -DfailIfNoTests=false"
                 }
             }
-
             post {
                 always {
-                    echo 'Publishing Allure results...'
                     allure([
                         includeProperties: false,
-                        jdk: '17.0.3',
+                        jdk: '17.0.1',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'target/allure-results']]
                     ])
                 }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline succeeded!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-        always {
-            cleanWs()
         }
     }
 }
