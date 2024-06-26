@@ -1,76 +1,69 @@
 pipeline {
     agent any
-
     tools {
         maven "MAVEN"
     }
-
     parameters {
         choice(
-            name: 'PROJECT',
-            choices: ['DemoQaWinter24'],
+            name: "PROJECT",
+            choices: ['DemoQaWinter24', 'Orange'],
             description: 'Choose project'
         )
         choice(
-            name: 'TEST_SUITE',
-            choices: ['Smoke', 'Regression', 'E2E'],
-            description: 'Test Suite'
+            name: "TEST_SUITE",
+            choices: ['All', 'Smoke', 'Regression', 'E2E'],
+            description: 'Choose the suite of tests to run. Select "All" to run all suites.'
+        )
+        choice(
+            name: "TEST_TYPE",
+            choices: ['UI', 'API', 'CASE_ID'],
+            description: 'Choose the type or CASE_ID of tests to run'
+        )
+        string(
+            name: "TEST_CASE_ID",
+            defaultValue: "",
+            description: 'Enter the test ID to run specific test case or leave empty'
         )
     }
-
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out the code...'
-                checkout([$class: 'GitSCM',
-                          branches: [[name: '*/main']], // Убедись, что имя ветки соответствует твоей
-                          userRemoteConfigs: [[url: 'https://github.com/Asylbash/DemoQa.git']]
-                ])
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building the application...'
-                sh "mvn clean package"
-            }
-        }
-
         stage('Test') {
             steps {
                 script {
                     def project = params.PROJECT ?: 'DemoQaWinter24'
                     def testSuite = params.TEST_SUITE ?: 'Smoke'
+                    def testType = params.TEST_TYPE
+                    def testID = params.TEST_CASE_ID
 
-                    echo "Running tests for project: ${project}, test suite: ${testSuite}"
-                    sh "mvn clean test -P${testSuite} -DtestCaseId=${project} -DfailIfNoTests=false"
+                    def suiteFiles = []
+                    if (testSuite == 'All') {
+                        suiteFiles = ['smoke_suite.xml', 'regression_suite.xml', 'E2E_suite.xml']
+                    } else {
+                        suiteFiles = ["${testSuite.toLowerCase()}_suite.xml"]
+                    }
+
+                    def groups = []
+                    if (testType == 'CASE_ID' && testID) {
+                        groups = [testID]
+                    } else {
+                        groups = [testType]
+                    }
+
+                    suiteFiles.each { suiteFile ->
+                        sh "mvn clean test -P ${project} -DsuiteXmlFile=${suiteFile} -Dgroups=${groups.join(',')} -DfailIfNoTests=false"
+                    }
                 }
             }
-
             post {
                 always {
-                    echo 'Publishing Allure results...'
                     allure([
                         includeProperties: false,
-                        jdk: '17.0.3',
+                        jdk: '17.0.1',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'target/allure-results']]
                     ])
                 }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline succeeded!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-        always {
-            cleanWs()
         }
     }
 }
