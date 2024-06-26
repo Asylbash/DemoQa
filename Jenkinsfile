@@ -16,13 +16,13 @@ pipeline {
         )
         choice(
             name: "TEST_TYPE",
-            choices: ['UI', 'API', 'NUMBER'],
-            description: 'Choose the type of tests to run'
+            choices: ['UI', 'API', 'CASE_ID'],
+            description: 'Choose the type or CASE_ID of tests to run'
         )
         string(
-            name: "TEST_NUMBER",
+            name: "TEST_CASE_ID",
             defaultValue: "",
-            description: 'Enter the test number to run specific test case or leave empty'
+            description: 'Enter the test ID to run specific test case or leave empty'
         )
     }
     stages {
@@ -32,7 +32,7 @@ pipeline {
                     def project = params.PROJECT ?: 'DemoQaWinter24'
                     def testSuite = params.TEST_SUITE
                     def testType = params.TEST_TYPE
-                    def testNumber = params.TEST_NUMBER
+                    def testID = params.TEST_CASE_ID
 
                     def suiteFiles = []
                     if (testSuite == 'All') {
@@ -42,8 +42,8 @@ pipeline {
                     }
 
                     def groups = []
-                    if (testType == 'NUMBER' && testNumber) {
-                        groups = [testNumber]
+                    if (testType == 'CASE_ID' && testID) {
+                        groups = [testID]
                     } else {
                         groups = [testType]
                     }
