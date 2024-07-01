@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Проверка кода из репозитория
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                // Сборка проекта
+                sh 'mvn clean install'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Запуск автоматизированных тестов
+                sh 'mvn test'
+            }
+        }
+        stage('Allure Report') {
+            steps {
+                // Генерация Allure отчетов
+                sh 'mvn allure:report'
+                allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+            }
+        }
+    }
+
+    post {
+        always {
+            // Всегда выполняемые шаги, например, публикация отчетов
+            junit 'target/surefire-reports/*.xml'
+        }
+        success {
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}
