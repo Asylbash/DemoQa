@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     def project = params.PROJECT ?: 'DemoQaWinter24'
-                    def testSuite = params.TEST_SUITE
+                    def testSuite = params.TEST_SUITE ?: 'Smoke'
                     def testType = params.TEST_TYPE
                     def testID = params.TEST_CASE_ID
 
